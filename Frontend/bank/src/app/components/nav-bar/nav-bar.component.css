@@ -1,0 +1,36 @@
+nav{
+  background-color: transparent;
+}
+
+._nav{
+  color: white;
+  font-family: "Helvetica Neue";
+  font-size:15px;
+  font-weight: bold;
+}
+
+.dropdown-menu{
+  background-color: white;
+
+}
+
+.dropdown-item{
+  font-size:smaller;
+  font-weight: bold;
+  color: #7C7C7C;
+}
+
+.login,.logout{
+  padding: 7px;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.navbar-text{
+  padding-right: 0px;
+}
+
+.logout{
+  color: white;
+  font-weight: bold;
+}

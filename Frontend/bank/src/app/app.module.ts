@@ -8,6 +8,7 @@ import { ViewAccountsComponent } from './components/view-accounts/view-accounts.
 import { UpdateAccountBalanceComponent } from './components/update-account-balance/update-account-balance.component';
 import { CalculateIntrestComponent } from './components/calculate-intrest/calculate-intrest.component';
 import { EditIntrestRatesComponent } from './components/edit-intrest-rates/edit-intrest-rates.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EditIntrestRatesComponent } from './components/edit-intrest-rates/edit-
     ViewAccountsComponent,
     UpdateAccountBalanceComponent,
     CalculateIntrestComponent,
-    EditIntrestRatesComponent
+    EditIntrestRatesComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule
