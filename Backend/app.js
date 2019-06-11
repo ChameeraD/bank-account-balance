@@ -4,21 +4,23 @@ const cors = require('cors');
 const path  = require('path');
 const multer = require('multer');
 
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'bank'
-});
+// var mysql = require('mysql');
+// var connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',
+//     database: 'bank'
+// });
 
-connection.connect(function(err) {
-  if (!err) {
-    console.log("Database Connection Created");
-  } else {
-    console.log("Connetion error occured" + err);
-  }
-});
+var routerAccount = require('./routes/account.routes');
+
+// connection.connect(function(err) {
+//   if (!err) {
+//     console.log("Database Connection Created");
+//   } else {
+//     console.log("Connetion error occured" + err);
+//   }
+// });
 
 const port = process.env.PORT ||4201;
 
@@ -35,6 +37,8 @@ app.use(cors(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 }));*/
+
+app.use('/api/account', routerAccount);
 
 app.listen(port, () => console.log('Server started at port :'+ port));
 

@@ -28,7 +28,7 @@ module.exports.getAllAccounts = function (req, res, next) {
 };
 
 //Get Details of One Account
-module.exports.getOneAccounts = function(req, res, next) {
+module.exports.getOneAccount = function(req, res, next) {
   var sql = "SELECT * FROM Accounts WHERE accountNumber ="+req.params.accountNumber;
   con.query(sql, function(err, result, fields) {
     if (err) {
