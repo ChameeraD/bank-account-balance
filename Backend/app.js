@@ -38,7 +38,7 @@ app.use(cors(function (req, res, next) {
     next();
 }));*/
 
-app.use('/api/account', routerAccount);
+app.use('/account', routerAccount);
 
 app.listen(port, () => console.log('Server started at port :'+ port));
 

@@ -1,0 +1,76 @@
+<div class=" outer">
+  <div class="middle">
+    <div class="inner">
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div
+          class="col-sm-8"
+          style="background-color:grey; padding: 50px; opacity: 0.9;"
+        >
+          <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+            <div class="form-group">
+              <label for="accountNumber">ගිණුම් අංකය</label>
+              <input
+                type="number"
+                class="form-control"
+                id="accountNumber"
+                name="accountNumber"
+                #name="ngModel"
+                [(ngModel)]="accountService.selectedAccount.accountNumber"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="typeId">ගිණුම් වර්ගය</label>
+              <select
+                class="custom-select"
+                id="typeId"
+                name="typeId"
+                #name="ngModel"
+                [(ngModel)]="accountService.selectedAccount.typeId"
+                required
+              >
+                <option type="number" selected value=99>Zero</option>
+                <option value=1>One</option>
+                <option value=2>Two</option>
+                <option value=3>Three</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="region">වසම</label>
+              <select
+                class="custom-select"
+                id="region"
+                name="region"
+                #name="ngModel"
+                [(ngModel)]="accountService.selectedAccount.region"
+                required
+              >
+                <option selected>Zero</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="balance">ශේෂය</label>
+              <input
+                type="number"
+                class="form-control"
+                id="balance"
+                name="balance"
+                #name="ngModel"
+                [(ngModel)]="accountService.selectedAccount.balance"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
