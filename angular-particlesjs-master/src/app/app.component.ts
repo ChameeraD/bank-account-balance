@@ -1,3 +1,4 @@
+import { SharedService } from './services/shared.service';
 import { Component } from '@angular/core';
 
 @Component({

@@ -6,11 +6,11 @@ var con = require('../../../config');
 //Add New Account
 module.exports.addNewAccount = function (req, res, next) {
     console.log(req.body)
-    var sql = "INSERT INTO accounts VALUES ("+req.body.accountNumber+","+req.body.typeId+","+req.body.balance+",'"+req.body.region+"')";
+    var sql = "INSERT INTO accounts VALUES ("+req.body.accountNumber+","+req.body.typeId+","+0+",'"+req.body.region+"')";
     console.log(sql);
     con.query(sql, function (err, result, fields) {
         if (err) {
-            res.status(500).send(err.sqlMessage)
+            res.json({ state: false, msg: err.sqlMessage });
         } else {
             res.send(result);
         }

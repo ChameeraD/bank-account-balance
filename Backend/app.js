@@ -13,6 +13,8 @@ const multer = require('multer');
 // });
 
 var routerAccount = require('./routes/account.routes');
+var routerTransaction = require('./routes/transaction.routes');
+
 
 // connection.connect(function(err) {
 //   if (!err) {
@@ -39,6 +41,7 @@ app.use(cors(function (req, res, next) {
 }));*/
 
 app.use('/account', routerAccount);
+app.use('/transaction', routerTransaction);
 
 app.listen(port, () => console.log('Server started at port :'+ port));
 

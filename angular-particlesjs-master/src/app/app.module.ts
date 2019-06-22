@@ -1,3 +1,6 @@
+import { TransactionFilterPipe } from './components/account/transaction-filter.pipe';
+import { AccountFilterPipe } from './components/view-accounts/account-filter.pipe';
+import { SharedService } from './services/shared.service';
 import { AppRoutingModule } from './app-routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,8 +13,9 @@ import { UpdateAccountBalanceComponent } from './components/update-account-balan
 import { CalculateIntrestComponent } from './components/calculate-intrest/calculate-intrest.component';
 import { EditIntrestRatesComponent } from './components/edit-intrest-rates/edit-intrest-rates.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { HttpClientModule } from "@angular/common/http"; 
-import { ParticlesComponent } from "./particles/particles.component";
+import { HttpClientModule } from '@angular/common/http';
+import { ParticlesComponent } from './particles/particles.component';
+import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { ParticlesComponent } from "./particles/particles.component";
     CalculateIntrestComponent,
     EditIntrestRatesComponent,
     NavBarComponent,
-    ParticlesComponent
+    ParticlesComponent,
+    AccountComponent,
+    AccountFilterPipe,
+    TransactionFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,7 @@ import { ParticlesComponent } from "./particles/particles.component";
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

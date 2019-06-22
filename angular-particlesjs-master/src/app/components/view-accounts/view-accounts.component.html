@@ -1,3 +1,37 @@
-<p>
-  view-accounts works!
-</p>
+<div class=" outer">
+  <div class="middle">
+    <div class="inner">
+      <div class="searchBar" style="margin-top: 50px">
+        <div class="searchCover">
+          <div class=" search form-group search_bar">
+            <input type="text" class="form-control" name="search" placeholder="search Here..."
+              [(ngModel)]="searchKeyword">
+          </div>
+        </div>
+      </div>
+      <div style="height: 500px">
+        <table class="table table-sm" style="margin-top:50px;">
+          <thead>
+            <tr>
+              <th style="width:30%" scope="col">ගිණුම් අංකය</th>
+              <th style="width:30%" scope="col">ශේෂය</th>
+              <th style="width:30%" scope="col">වසම</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let account of accountService.account | AccountFilter:searchKeyword">
+              <tr>
+                <th>{{account.accountNumber}}</th>
+                <td>{{account.balance}}</td>
+                <td>{{account.region}}</td>
+                <td><button type="button" class="btn btn-primary" (click)="goToProfile(account)">විස්තර</button></td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

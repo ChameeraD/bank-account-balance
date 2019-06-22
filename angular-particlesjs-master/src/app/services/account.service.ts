@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class AccountService {
   selectedAccount: Account;
   account: Account[];
   type: string;
 
-  readonly baseURL = "http://localhost:4201/account/";
+  readonly baseURL = 'http://localhost:4201/account';
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +19,7 @@ export class AccountService {
   }
 
   getAccountById(accountNumber: number) {
-    return this.http.get(this.baseURL + `/${accountNumber}`);
+    return this.http.get(this.baseURL + `/details/${accountNumber}`);
   }
 
   getAccountList() {

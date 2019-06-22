@@ -1,3 +1,83 @@
-<p>
-  update-account-balance works!
-</p>
+<div class="row">
+  <div style="width:50%;">
+    <div class="outer">
+      <div class="middle">
+        <div class="inner">
+          <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8" style="background-color:purple; padding: 50px; opacity: 0.9;">
+            <h1>බැර</h1>
+            <hr>
+            <form #debitForm="ngForm" (ngSubmit)="onSubmit1(debitForm)">
+              <div class="form-group">
+                <label for="accountNumber">ගිණුම් අංකය</label>
+                <input type="number" class="form-control" id="accountNumber" name="accountNumber" #name="ngModel"
+                  [(ngModel)]="transactionService.selectedTransaction1.accountNumber" required />
+              </div>
+              <div class="form-group">
+                <label for="typeId">මුදල</label>
+                <input type="number" class="form-control" id="amount" name="amount" #name="ngModel"
+                  [(ngModel)]="transactionService.selectedTransaction1.amount" required />
+              </div>
+              <div class="form-group">
+                <label for="region">දිනය</label>
+                <input type="date" class="form-control" id="date" name="date" #name="ngModel"
+                  [(ngModel)]="transactionService.selectedTransaction1.date" required />
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="type" name="type" #name="ngModel" value="in"
+                  [(ngModel)]="transactionService.selectedTransaction1.type" hidden />
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-sm-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="width:50%; height: 650px">
+      <div class="outer">
+        <div class="middle">
+          <div class="inner">
+            <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8" style="background-color:purple; padding: 50px; opacity: 0.9;">
+              <h1>හර</h1>
+              <hr>
+              <form #creditForm="ngForm" (ngSubmit)="onSubmit1(creditForm)">
+                <div class="form-group">
+                  <label for="accountNumber">ගිණුම් අංකය</label>
+                  <input type="number" class="form-control" id="accountNumber" name="accountNumber" #name="ngModel"
+                    [(ngModel)]="transactionService.selectedTransaction2.accountNumber" required />
+                </div>
+                <div class="form-group">
+                  <label for="typeId">මුදල</label>
+                  <input type="number" class="form-control" id="amount" name="amount" #name="ngModel"
+                    [(ngModel)]="transactionService.selectedTransaction2.amount" required />
+                </div>
+                <div class="form-group">
+                  <label for="region">දිනය</label>
+                  <input type="date" class="form-control" id="date" name="date" #name="ngModel"
+                    [(ngModel)]="transactionService.selectedTransaction2.date" required />
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="type" name="type" #name="ngModel" value="out"
+                    [(ngModel)]="transactionService.selectedTransaction2.type" hidden />
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
