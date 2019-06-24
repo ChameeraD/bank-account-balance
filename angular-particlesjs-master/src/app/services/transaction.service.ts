@@ -28,6 +28,7 @@ export class TransactionService {
   getTransactionByAccountId(accountNumber: number) {
     return this.http.get(this.baseURL + `/accountId/${accountNumber}`);
   }
+
   getTransactionList() {
     return this.http.get(this.baseURL);
   }
@@ -39,4 +40,5 @@ export class TransactionService {
   deleteTransaction(transactionId: number) {
     return this.http.delete(this.baseURL + `/${transactionId}`);
   }
+
 }

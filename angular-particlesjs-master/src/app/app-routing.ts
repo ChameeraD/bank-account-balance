@@ -1,3 +1,5 @@
+import { MonthlyBalanceSheetComponent } from './components/monthly-balance-sheet/monthly-balance-sheet.component';
+import { AddAccountTypeComponent } from './components/add-account-type/add-account-type.component';
 import { AccountComponent } from './components/account/account.component';
 
 import { NgModule, Component } from '@angular/core';
@@ -20,6 +22,8 @@ const applicationRoutes: Routes = [
   { path: 'update-account', component: UpdateAccountBalanceComponent },
   { path: 'edit-rates', component: EditIntrestRatesComponent },
   { path: 'account', component: AccountComponent },
+  { path: 'add-accounttype', component: AddAccountTypeComponent},
+  { path: 'monthly-balance', component: MonthlyBalanceSheetComponent}
 
 
 ];

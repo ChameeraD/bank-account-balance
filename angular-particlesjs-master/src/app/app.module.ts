@@ -16,6 +16,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ParticlesComponent } from './particles/particles.component';
 import { AccountComponent } from './components/account/account.component';
+import { AddAccountTypeComponent } from './components/add-account-type/add-account-type.component';
+import { MonthlyBalanceSheetComponent } from './components/monthly-balance-sheet/monthly-balance-sheet.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AccountComponent } from './components/account/account.component';
     ParticlesComponent,
     AccountComponent,
     AccountFilterPipe,
-    TransactionFilterPipe
+    TransactionFilterPipe,
+    AddAccountTypeComponent,
+    MonthlyBalanceSheetComponent
   ],
   imports: [
     BrowserModule,
