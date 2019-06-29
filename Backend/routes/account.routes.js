@@ -8,6 +8,7 @@ router.get("/details/:accountNumber", ctrlAccount.getOneAccount);
 router.get("/accounttype",ctrlAccount.getAllAccountType)
 router.get("/accounttype/:typeId",ctrlAccount.getAccountTypeById)
 router.get("/typeId/:typeId",ctrlAccount.getAllAccountsByTypeId)
+router.get("/totalbalance/:typeId",ctrlAccount.getTotalBalance)
 
 router.post("/", ctrlAccount.addNewAccount)
 router.post("/accounttype",ctrlAccount.addNewAccountType)

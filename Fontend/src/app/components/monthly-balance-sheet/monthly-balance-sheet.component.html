@@ -1,0 +1,59 @@
+<br>
+<div class="container-fluid bg-3 text-center">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8" style="background-color:rgb(23, 16, 124); padding-left:20px; padding-right:20;opacity: 0.9;">
+      <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        <div class="form-group">
+          <label for="typeId">ගිණුම් වර්ගය</label>
+          <select class="custom-select" id="typeId" name="typeId" ngModel>
+            <option value=1>සාමාජික තැන්පත්</option>
+            <option value=2>සාමාජික නොවන තැන්පත්</option>
+            <option value=3>සමුහ තැන්පත්</option>
+            <option value=4>අනිවාර්ය ඉතුරුම්</option>
+            <option value=5>ළමා තැන්පත්</option>
+            <option value=6>සිසුරක</option>
+            <option value=7>දිරියමතා</option>
+            <option value=8>කොටස් තැන්පත්</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div><br>
+
+<div class="jumbotron" style="background-color: transparent">
+  <div class=" outer">
+    <div class="middle">
+      <div class="inner">
+        <div id="print-section" style="height:450px;">
+          <p>දිනය : {{ today | date }}</p>
+          <table  id="contentToConvert1" class="table table-sm" >
+            <thead>
+              <tr>
+                <th style="width:30%" scope="col">ගිණුම් අංකය</th>
+                <th style="width:30%" scope="col">ශේෂය</th>
+                <th style="width:30%" scope="col">වසම</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let account of accountService.account ">
+                <tr>
+                  <th>{{account.accountNumber}}</th>
+                  <td>{{account.balance}}</td>
+                  <td>{{account.region}}</td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+          <p>මුළු ශේෂයන්ගේ එකතුව : {{totalBalance}}</p>
+        </div>
+        <button class="btn btn-primary" printSectionId="print-section" ngxPrint>print</button> 
+      </div>
+    </div>
+  </div>
+</div>

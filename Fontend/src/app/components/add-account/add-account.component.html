@@ -1,0 +1,91 @@
+<div class=" outer">
+  <div class="middle">
+    <div class="inner">
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div
+          class="col-sm-8"
+          style="background-color:rgb(23, 16, 124); padding: 50px; opacity: 0.9;"
+        >
+          <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+            <div class="form-group">
+              <label for="accountNumber">ගිණුම් අංකය</label>
+              <input
+                type="number"
+                class="form-control"
+                id="accountNumber"
+                name="accountNumber"
+                #name="ngModel"
+                [(ngModel)]="accountService.selectedAccount.accountNumber"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="typeId">ගිණුම් වර්ගය</label>
+              <select
+                class="custom-select"
+                id="typeId"
+                name="typeId"
+                #name="ngModel"
+                [(ngModel)]="accountService.selectedAccount.typeId"
+                required
+              >
+                <option value=1>සාමාජික තැන්පත්</option>
+                <option value=2>සාමාජික නොවන තැන්පත්</option>
+                <option value=3>සමුහ තැන්පත්</option>
+                <option value=4>අනිවාර්ය ඉතුරුම්</option>
+                <option value=5>ළමා තැන්පත්</option>
+                <option value=6>සිසුරක</option>
+                <option value=7>දිරියමතා</option>
+                <option value=8>කොටස් තැන්පත්</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="region">වසම</label>
+              <select
+                class="custom-select"
+                id="region"
+                name="region"
+                #name="ngModel"
+                [(ngModel)]="accountService.selectedAccount.region"
+                required
+              >
+                <option value="1 - Thilaka Udagama">1 - තිලක උදාගම</option>
+                <option value="5 - Walpita Uthura">5 - වල්පිට උතුර</option>
+                <option value="6- Walpita Dakuna">6- වල්පිට දකුණ</option>
+                <option value="7 - Balagoda">7 - බලගොඩ</option>
+                <option value="8 - Keebi Ela / Darekanda">8 - කීබි ඇල / දරෙකන්ද</option>
+                <option value="10 - Gonapura">10 - ගෝනපුර</option>
+                <option value="12 - Adurathwila">12 - අදුරත්විල</option>
+                <option value="13 - Kosgahakanaththa">13 - කොස්ගහකනත්ත</option>
+                <option value="14 - Pahala Keebiya">14 - පහල කීබිය</option>
+                <option value="15 - Kaasideniya">15 - කාසිදෙනිය</option>
+                <option value="16 - Warakapitikanda">16 - වරකපිටිකන්ද</option>
+                <option value="17 - Kohobanadeniya">17 - කොහොබනදෙනිය</option>
+                <option value="18 - Pilagoda">18 - පිලගොඩ</option>
+                <option value="19 - Ganegama/Nagenahira">19 - ගනේගම/නැගෙනහිර</option>
+                <option value="20 - Meda Keebiya">20 - මැද කීබිය</option>
+              </select>
+            </div>
+            <!-- <div class="form-group">
+              <label for="balance">ශේෂය</label>
+              <input
+                type="number"
+                class="form-control"
+                id="balance"
+                name="balance"
+                #name="ngModel"
+                [(ngModel)]="accountService.selectedAccount.balance"
+                required
+              />
+            </div> -->
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
